@@ -1,0 +1,25 @@
+# IDE
+.idea
+.vscode
+
+# Source
+/src
+
+# Test
+/coverage
+/test
+*.test.ts
+*.test-data.json
+
+# Build config
+.github
+.eslintrc.json
+.prettierrc.json
+jest.config.js
+rollup.config.js
+tsconfig*.json
+typedoc.js
+
+# Data and logs
+*.csv
+*.log
