@@ -2,6 +2,9 @@
 
 [shevchenko.js](https://github.com/tooleks/shevchenko-js) extension for declension of Ukrainian military ranks and appointments.
 
+![NPM Version](https://img.shields.io/npm/v/shevchenko-ext-military)
+![NPM Downloads](https://img.shields.io/npm/dm/shevchenko-ext-military?label=npm%20downloads)
+
 ## User Guide
 
 ### Installation
