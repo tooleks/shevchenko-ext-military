@@ -1,6 +1,6 @@
 {
   "name": "shevchenko-ext-military",
-  "version": "0.0.0-beta.1",
+  "version": "0.0.0-beta.2",
   "description": "shevchenko.js extension for declension of Ukrainian military ranks and appointments",
   "main": "./dist/cjs/military-extension.js",
   "module": "./dist/es/military-extension.js",
