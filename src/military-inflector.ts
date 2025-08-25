@@ -2,7 +2,10 @@ import { GrammaticalCase, GrammaticalGender, WordClass, WordInflector } from 'sh
 
 export type WordHyphenationRule = {
   include: string[];
+  useCase?: UseCase;
 };
+
+type UseCase = 'militaryRank' | 'militaryAppointment';
 
 export type WordClassifierRule = {
   gender: GrammaticalGender;
@@ -31,12 +34,18 @@ export class MilitaryInflector {
     this.wordClassifierRules = wordClassifierRules;
   }
 
-  async inflect(words: string, grammaticalCase: GrammaticalCase): Promise<string> {
+  async inflect(
+    words: string,
+    grammaticalCase: GrammaticalCase,
+    useCase: UseCase,
+  ): Promise<string> {
     const wordParts = [];
 
     for (const word of words.split(' ')) {
-      const hyphenated = this.wordHyphenationRules.find((rule) =>
-        rule.include.every((pattern) => new RegExp(pattern, 'i').test(word)),
+      const hyphenated = this.wordHyphenationRules.find(
+        (rule) =>
+          (rule.useCase == null || rule.useCase === useCase) &&
+          rule.include.every((pattern) => new RegExp(pattern, 'i').test(word)),
       );
 
       if (hyphenated) {

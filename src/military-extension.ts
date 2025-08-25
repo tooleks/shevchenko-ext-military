@@ -37,13 +37,18 @@ function afterInflect(militaryInflector: MilitaryInflector): AfterInflectHook {
     const output = {} as DeclensionOutput<T>;
 
     if (input.militaryRank != null) {
-      output.militaryRank = await militaryInflector.inflect(input.militaryRank, grammaticalCase);
+      output.militaryRank = await militaryInflector.inflect(
+        input.militaryRank,
+        grammaticalCase,
+        'militaryRank',
+      );
     }
 
     if (input.militaryAppointment != null) {
       output.militaryAppointment = await militaryInflector.inflect(
         input.militaryAppointment,
         grammaticalCase,
+        'militaryAppointment',
       );
     }
 

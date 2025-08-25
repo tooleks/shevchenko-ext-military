@@ -2,6 +2,13 @@
   {
     "include": [
       "-",
+      "^(майстер)"
+    ],
+    "useCase": "militaryAppointment"
+  },
+  {
+    "include": [
+      "-",
       "^(?!штаб|майстер|генерал)"
     ]
   }
